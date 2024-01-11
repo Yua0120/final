@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include 'show.php';
+    ?>
     <a href="write.php">日記を書く</a>
+    <a href="write.php">読む・編集</a>
+    <a href="delete.php">削除</a>
 </body>
 </html>

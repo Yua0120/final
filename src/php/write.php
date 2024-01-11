@@ -8,7 +8,7 @@
 <body>
     <form action="write_output.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="title" id="title" placeholder="タイトル">
-        <textarea name="body_text" id="body_text" cols="70" rows="100" placeholder="今日あったこと"></textarea>
+        <textarea name="body_text" id="body_text" cols="30" rows="50" placeholder="今日あったこと"></textarea>
         <label for="emotion">今日の気分</label>
         <select id="emotion" name="emotion">
             <option value="#aacf53">穏やか</option>
