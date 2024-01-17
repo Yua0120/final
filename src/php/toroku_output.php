@@ -27,7 +27,7 @@ try{
                 'id' => $result['user_id']
             ];
             // 登録が成功した場合、Top.php にリダイレクト
-            header('Location: index.html');
+            header('Location: index.php');
         }
 
         
