@@ -9,7 +9,7 @@
             $sql = $pdo->prepare('select user_id from Users where user_id = ? AND password = ?');
             $sql->execute([$_POST['email'],$hashedPassword]);
             $result = $sql->fetch(PDO::FETCH_ASSOC);
-            if(isset($result['user_id'])){
+            if($result && isset($result['user_id'])){
                 header('Location: toroku.php?flag=known');
             }else{
                 $sql = $pdo->prepare('insert into Users (user_id,password) values (?,?)');
