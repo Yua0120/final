@@ -15,4 +15,13 @@
         <button type="submit">登録</button>
     </form>
 </body>
+<div class="toroku_miss">
+    <?php
+    // $_GET['flag']がセットされているか確認
+    if (isset($_GET['flag']) && $_GET['flag'] == 'known') {
+        echo '<p class="error">アカウントは既に登録されています</p>';
+        echo '<a href="login.php">ログインする</a>';
+    }
+    ?>
+</div>
 </html>

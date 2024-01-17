@@ -9,14 +9,14 @@
         session_start();
         require 'db-connect.php';
         if(!isset($_SESSION['User'])){
-            $emo = [['#aacf53','穏やか'],
-                    ['#e9546b','喜び'],
-                    ['#f08300','楽しみ'],
-                    ['#f2797b','ときめき'],
-                    ['#19448e','悲しみ'],
-                    ['#c9171e','怒り'],
-                    ['#9ea1a3','虚無'],
-                    ['#4d4398','憂鬱']
+            $emo = [['aacf53','穏やか'],
+                    ['e9546b','喜び'],
+                    ['f08300','楽しみ'],
+                    ['f2797b','ときめき'],
+                    ['19448e','悲しみ'],
+                    ['c9171e','怒り'],
+                    ['9ea1a3','虚無'],
+                    ['4d4398','憂鬱']
                 ];
             $pdo = new PDO($connect,USER,PASS);
             $sql=$pdo->prepare('select * from Diary where user_id = ?');
@@ -41,8 +41,10 @@
         <?php
         // $_GET['flag']がセットされているか確認
         if (isset($_GET['flag']) && $_GET['flag'] == 'fail') {
-            echo '<p class="error">日記の更新に失敗しました。もう一度入力してください。</p>';
-        }
+            echo '<script>alert("日記の更新に失敗しました。もう一度入力してください。")</script>';
+        }else if (isset($_GET['flag']) && $_GET['flag'] == 'reg') {
+            echo '<script>alert("新規アカウント登録が完了しました。")</script>';
+        
         ?>
     </div>
     </body>

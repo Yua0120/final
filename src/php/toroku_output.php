@@ -7,21 +7,19 @@ try{
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $sql = $pdo->prepare('select user_id from Password where password = ?');
+        $sql = $pdo->prepare('select user_id from Users where password = ?');
         $sql->execute([$hashedPassword]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
 
         if(isset($result['user_id'])){
-            header('Location: toroku.php');
-            echo '<script>alert("すでにアカウントが存在しています")</script>';
+            header('Location: toroku.php?flag=known');
 
         }else{
-            $sql = $pdo->prepare('insert into Password (pass) values (?)');
+            $sql = $pdo->prepare('insert into Users (password) values (?)');
             $sql->execute([$hashedPassword]);
             $result = $sql->fetch(PDO::FETCH_ASSOC);
 
-            header('Location: Top.php');
-            echo '<script>alert("新規登録が完了しました")</script>';
+            header('Location: index.php?flag=reg');
 
             $_SESSION['User'] = [
                 'id' => $result['user_id']
