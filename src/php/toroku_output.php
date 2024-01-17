@@ -25,6 +25,8 @@
                 // 登録が成功した場合、Top.php にリダイレクト
                 header('Location: index.php?flag=reg');
             }
+        }else{
+            var_dump('デバッグ中10');
         }
     }catch (PDOException $e){
         echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());
