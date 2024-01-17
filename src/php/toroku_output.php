@@ -15,7 +15,7 @@
                 $sql = $pdo->prepare('insert into Users (user_id,password) values (?,?)');
                 $sql->execute([$_POST['email'],$hashedPassword]);
                 //ユーザーIDの取得
-                $selectSql = $pdo->prepare('SELECT user_id FROM Users WHERE user_id = ? AND password = ?');
+                $selectSql = $pdo->prepare('select user_id from Users where user_id = ? AND password = ?');
                 $selectSql->execute([$_POST['email'], $hashedPassword]);
                 $result = $selectSql->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['User'] = [

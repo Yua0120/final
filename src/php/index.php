@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php session_start();?>
     <div class="menu">
         <a href="logout.php">ログアウト</a>
         <a href="write.php">日記を書く</a>
