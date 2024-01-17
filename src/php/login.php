@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>ログイン</h1>
-    <form action="./login_output.php" method="post">
+    <form action="login_output.php" method="post">
         <p>メールアドレス</p>
         <input type="email" name="email" id="email">
         <p>パスワード</p>

@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>新規登録</h1>
-    <form action="./toroku-output.php" method="post">
+    <form action="toroku-output.php" method="post">
         <p>メールアドレス</p>
         <input type="email" name="email" id="email">
         <p>パスワード</p>
