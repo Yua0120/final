@@ -1,5 +1,5 @@
 <?php
-    require 'db-connect.php';
+    require 'connect.php';
     if(!isset($_SESSION['User'])){
         $pdo = new PDO($connect,USER,PASS);
         $sql=$pdo->prepare('select * from Diary where user_id = ?');
