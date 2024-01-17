@@ -2,7 +2,7 @@
 session_start();
 require 'connect.php';
 try{
-    if(isset($_POST['username']) && isset($_POST['password'])){
+    if(isset($_POST['email']) && isset($_POST['password'])){
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
