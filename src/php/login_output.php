@@ -18,7 +18,7 @@ try{
             ];
         }else{
             // 登録が成功した場合、Top.php にリダイレクト
-            header('Location: login.html');
+            header('Location: login.php');
             echo '<script>alert("アカウントが存在しません")</script>';
         }
 
