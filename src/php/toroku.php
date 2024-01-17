@@ -14,12 +14,13 @@
         <input type="password" name="password" id="password">
         <button type="submit">登録</button>
     </form>
+    <a href="login.php">既にアカウントをお持ちの方はこちら</a>
 </body>
 <div class="toroku_miss">
     <?php
     // $_GET['flag']がセットされているか確認
     if (isset($_GET['flag']) && $_GET['flag'] == 'known') {
-        echo '<p class="error">アカウントは既に登録されています</p>';
+        echo '<p class="error">そのメールアドレスは既に登録されています</p>';
         echo '<a href="login.php">ログインする</a>';
     }
     ?>
