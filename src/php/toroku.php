@@ -20,8 +20,7 @@
     <?php
     // $_GET['flag']がセットされているか確認
     if (isset($_GET['flag']) && $_GET['flag'] == 'known') {
-        echo '<p class="error">そのメールアドレスは既に登録されています</p>';
-        echo '<a href="login.php">ログインする</a>';
+        echo '<script>alert("そのメールアドレスは既に登録されています。")</script>';
     }
     ?>
 </div>
