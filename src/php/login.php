@@ -15,5 +15,13 @@
         <button type="submit">ログイン</button>
     </form>
     <a href="toroku.php">新規登録はこちら</a>
+    <div class="login_miss">
+    <?php
+    // $_GET['flag']がセットされているか確認
+    if (isset($_GET['flag']) && $_GET['flag'] == 'unknown') {
+        echo '<script>alert("アカウントが存在しません")</script>';
+    }
+    ?>
+</div>
 </body>
 </html>

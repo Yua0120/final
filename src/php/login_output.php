@@ -6,22 +6,19 @@ try{
         $pdo = new PDO($connect, USER, PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-        $sql = $pdo->prepare('select user_id from Users where user_id = ? AND password = ?');
-        $sql->execute([$_POST['email'],$hashedPassword]);
+        $sql = $pdo->prepare('select user_id, password from Users where user_id = ?');
+        $sql->execute([$_POST['email']]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
-
-        if(isset($result['user_id'])){
+        if($result && password_verify($_POST['password'], $result['password'])){
             header('Location: index.php');
             $_SESSION['User'] = [
                 'id' => $result['user_id']
             ];
         }else{
-            header('Location: login.php');
-            echo '<script>alert("アカウントが存在しません")</script>';
+            header('Location: login.php?flag=unknown');
         }
-
-        
+    }else{
+        var_dump('デバッグ中10');
     }
 }catch (PDOException $e){
     echo '<script>alert("データベースエラー")</script>' . htmlspecialchars($e->getMessage());

@@ -7,13 +7,13 @@
         require 'connect.php';
         $pdo = new PDO($connect, USER, PASS);
         $date=date("Y-m-d");
-        $sql = $pdo->prepare('insert into Diary(user_id,diary_title,diary_text,write_date,emotion_code) values (?,?,?,?,?,?)');
+        $sql = $pdo->prepare('insert into Diary(user_id,diary_title,diary_text,write_date,emotion_code) values (?,?,?,?,?)');
         $success = $sql->execute([$_SESSION['User']['id'], $_POST['title'], $_POST['body_text'], $date, $_POST['emotion']]);
         if ($success) {
-            header("Location: ./Top.php");
+            header("Location: index.php");
             exit;
         } else {
-            header("Location: ./C_post-input.php?flag=fail");
+            header("Location: ./write.php?flag=fail");
             exit;
         }
     }

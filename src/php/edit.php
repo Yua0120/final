@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -6,9 +7,8 @@
 	</head>
 	<body>
     <?php
-        session_start();
-        require 'db-connect.php';
-        if(!isset($_SESSION['User'])){
+        require 'connect.php';
+        if(isset($_SESSION['User'])){
             $emo = [['aacf53','穏やか'],
                     ['e9546b','喜び'],
                     ['f08300','楽しみ'],
@@ -19,21 +19,23 @@
                     ['4d4398','憂鬱']
                 ];
             $pdo = new PDO($connect,USER,PASS);
-            $sql=$pdo->prepare('select * from Diary where user_id = ?');
-            $sql->execute([$_SESSION['User']['id']]);
+            $sql=$pdo->prepare('select * from Diary where diary_id = ?');
+            $sql->execute([$_GET['id']]);
             foreach($sql as $row){
+                echo '<div class="diary">';
                 echo '<form action="edit_output.php" method="post">';
                 echo '<input type="hidden" name="id" value="',$row['diary_id'],'">';
-                echo '<input type="text" name="title" id="title" placeholder="タイトル">';
-                echo '<textarea name="body_text" id="body_text" cols="30" rows="50" placeholder="今日あったこと"></textarea>';
-                echo '<div class="emotion">今日あったこと';
+                echo '<input type="text" name="title" id="title" placeholder="',$row['diary_title'],'">';
+                echo '<textarea name="body_text" id="body_text" cols="30" rows="10" placeholder="',$row['diary_text'],'"></textarea>';
+                echo '<div class="emotion">今日の気分';
                 echo '<select name="emotion" id="emotion"><option value="">';
                 for($i = 0; $i < 8; $i++){
                     echo '<option value=',$emo[$i][0],'>',$emo[$i][1],'</option>';
                 }
-                echo '</select></div>';
-                echo '';
+                echo '</select>';
+                echo '</div>';
                 echo '</form>';
+                echo '</div>';
             }
         }
     ?>
@@ -44,7 +46,7 @@
             echo '<script>alert("日記の更新に失敗しました。もう一度入力してください。")</script>';
         }else if (isset($_GET['flag']) && $_GET['flag'] == 'reg') {
             echo '<script>alert("新規アカウント登録が完了しました。")</script>';
-        
+        }
         ?>
     </div>
     </body>

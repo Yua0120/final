@@ -15,8 +15,7 @@
         <button type="submit">登録</button>
     </form>
     <a href="login.php">既にアカウントをお持ちの方はこちら</a>
-</body>
-<div class="toroku_miss">
+    <div class="toroku_miss">
     <?php
     // $_GET['flag']がセットされているか確認
     if (isset($_GET['flag']) && $_GET['flag'] == 'known') {
@@ -24,4 +23,5 @@
     }
     ?>
 </div>
+</body>
 </html>
