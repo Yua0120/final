@@ -7,7 +7,7 @@ try{
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        $sql = $pdo->prepare('select user_id from Users where user_id = ? AND pass = ?');
+        $sql = $pdo->prepare('select user_id from Users where user_id = ? AND password = ?');
         $sql->execute([$_POST['email'],$hashedPassword]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
 
