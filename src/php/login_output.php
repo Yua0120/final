@@ -12,12 +12,11 @@ try{
         $result = $sql->fetch(PDO::FETCH_ASSOC);
 
         if(isset($result['user_id'])){
-            header('Location: index.html');
+            header('Location: index.php');
             $_SESSION['User'] = [
                 'id' => $result['user_id']
             ];
         }else{
-            // 登録が成功した場合、Top.php にリダイレクト
             header('Location: login.php');
             echo '<script>alert("アカウントが存在しません")</script>';
         }
