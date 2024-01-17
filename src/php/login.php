@@ -8,7 +8,7 @@
     <h1>ログイン</h1>
     <form action="login_output.php" method="post">
         <p>メールアドレス</p>
-        <input type="text" name="email" id="email">
+        <input type="email" name="email" id="email">
         <p>パスワード</p>
         <input type="password" name="password" id="password">
         <button type="submit">ログイン</button>
