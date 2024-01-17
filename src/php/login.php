@@ -13,5 +13,6 @@
         <input type="password" name="password" id="password">
         <button type="submit">ログイン</button>
     </form>
+    <a href="toroku.php">新規登録はこちら</a>
 </head>
 </html>
