@@ -19,7 +19,7 @@
             echo '</div>';
             echo '<div class="edit">';
             echo '<a href="edit.php?id=',$row['diary_id'],'&code=',$color_rgba,'">中身を読む・編集する</a><br>';
-            echo '<a href="delete.php?id=',$row['diary_id'],'">削除</a>';
+            echo '<a href="delete.php?id=',$row['diary_id'],'&code=',$color_rgba,'&rgb=',$color_rgb,'">削除</a>';
             echo '</div>';
             echo '</div>';
         }

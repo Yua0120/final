@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="index.php">トップページへ</a>
     <form action="write_output.php" method="POST" class="write-area">
         <input type="text" name="title" id="title" placeholder="タイトル">
         <textarea name="body_text" id="body_text" cols="30" rows="50" placeholder="今日あったこと"></textarea>
@@ -21,7 +22,7 @@
             <option value="#9ea1a3">虚無</option>
             <option value="#4d4398">憂鬱</option>
         </select>
-        <input type="submit" value="編集完了" class="signin">
+        <input type="submit" value="編集完了" class="written">
     </form>
 </body>
 <div class="post-fail">

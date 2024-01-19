@@ -28,9 +28,9 @@
                 echo '<form action="edit_output.php" method="post"  class="write-area">';
                 echo '<input type="text" name="id" value="',$row['diary_id'],'" hidden>';
                 echo '<h3>タイトル</h3>';
-                echo '<input type="text" name="title" id="title" value="',$row['diary_title'],'">';
+                echo '<input type="text" name="title" id="edi-title" value="',$row['diary_title'],'">';
                 echo '<p>今日あったこと</p>';
-                echo '<textarea name="body_text" id="body_text" cols="10" rows="30">',$row['diary_text'],'</textarea>';
+                echo '<textarea name="body_text" id="edi-body_text" cols="10" rows="30">',$row['diary_text'],'</textarea>';
                 echo '<div class="emotion">今日の気分';
                 echo '<select name="emotion" id="emotion"><option value="',$row['emotion_code'],'">',$row['emotion_name'],'</option>';
                 for($i = 0; $i < 8; $i++){
@@ -38,7 +38,7 @@
                 }
                 echo '</select>';
                 echo '</div>';
-                echo '<input type="submit" value="編集完了" class="signin">';
+                echo '<input type="submit" value="編集完了" class="written">';
                 echo '</form>';
                 echo '</div>';
             }
