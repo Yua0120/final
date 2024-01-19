@@ -5,25 +5,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<meta charset="UTF-8">
-        <link rel="stylesheet" href="edstyle.css">
+		<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+        
 		<title>削除画面</title>
 	</head>
 	<body>
         <table>
 <?php
-    $pdo=new PDO($connect, USER, PASS);
     $pdo = new PDO($connect,USER,PASS);
-    $sql=$pdo->prepare('select * from Diary where user_id = ?');
-    $sql->execute([$_SESSION['User']['id']]);
+    $sql=$pdo->prepare('select * from Diary where diary_id = ?');
+    $sql->execute([$_GET['id']]);
     foreach($sql as $row){
         echo '<tr>';
-        echo '<td id="title">', $row['name'], '</td>';
-        echo '<td id="flo">', $row['price'], '</td>';
-        echo '<td id="flo">', $row['category'], '</td>';
-        echo '<td id="str">', $row['story'], '</td>';
+        echo '<h3 id="title">', $row['diary_title'], '</h3>';
+        echo '<p>', $row['diary_text'], '</p>';
+        echo '<p>', $row['write_date'], '</p>';
+        echo '<p>', $row['emotion_name'], '</p>';
         echo '<td class="del">';
-        echo '<a href="deleteend.php?id=', $row['id'], '">削除</a>';
+        echo '<a href="delete_output.php?id=', $row['diary_id'], '">削除</a>';
         echo '</td>';
         echo '</tr>';
         echo "\n";
@@ -32,7 +32,7 @@
 ?>
     </table>
     <div id="edit">
-        <a href="productAll.php">商品一覧画面へ</a>
+        <a href="index.php">トップページへ</a>
     </div>
     </body>
 </html>

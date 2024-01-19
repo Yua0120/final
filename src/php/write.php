@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <form action="write_output.php" method="POST">
+    <form action="write_output.php" method="POST" class="write-area">
         <input type="text" name="title" id="title" placeholder="タイトル">
         <textarea name="body_text" id="body_text" cols="30" rows="50" placeholder="今日あったこと"></textarea>
         <label for="emotion">今日の気分</label>
@@ -20,7 +21,7 @@
             <option value="#9ea1a3">虚無</option>
             <option value="#4d4398">憂鬱</option>
         </select>
-        <input type="submit" value="編集完了">
+        <input type="submit" value="編集完了" class="signin">
     </form>
 </body>
 <div class="post-fail">

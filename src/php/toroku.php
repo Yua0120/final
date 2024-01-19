@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>ユーザー登録</title>
 </head>
 <body>
-    <h1>新規登録</h1>
+    <h1>日記型感情管理しすてむ</h1>
+    <h2>新規登録</h2>
     <form action="toroku_output.php" method="post">
-        <p>メールアドレス</p>
-        <input type="email" name="email" id="email">
-        <p>パスワード</p>
-        <input type="password" name="password" id="password">
-        <button type="submit">登録</button>
+        <p>メールアドレス<input type="email" name="email" class="email"></p>
+        <p>パスワード<input type="password" name="password" class="password"></p>
+        <br>
+        <button type="submit" class="signin">登録</button>
     </form>
-    <a href="login.php">既にアカウントをお持ちの方はこちら</a>
+    <a href="login.php" class="linkpage">既にアカウントをお持ちの方はこちら</a>
     <div class="toroku_miss">
     <?php
     // $_GET['flag']がセットされているか確認

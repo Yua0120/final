@@ -1,9 +1,101 @@
 .diary{
-  width: 80%;
+  width: 90%;
   height: 20%;
-  border-radius: 50px;
+  margin: 2% 5%;
+  border-radius: 10px;
+  display: flex;
+}
+.edit{
+  flex: 1;
+  margin-top: 6.5%;
+}
+
+.main{
+  flex: 2;
+  margin-left: 10%;
 }
 
 .diary-one{
   flex-direction: column;
+}
+
+.email{
+  width: 90%;
+  padding: 10px 15px;
+  margin-left: 2%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #47585c;
+}
+
+.email:focus{
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #2ca9e1;
+}
+
+.password{
+  width: 90%;
+  padding: 10px 15px;
+  margin-left: 2%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #47585c;
+}
+
+.password:focus{
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #fcc800;
+}
+
+.login{
+  margin: 10% 30%;
+  width: 40%;
+}
+
+.signin{
+  border: none;
+  outline: none;
+  padding: 2% 5%;
+  margin-left:37.8%;
+  margin-bottom: 3%;
+  color: white;
+  background-color: #89abb3;
+}
+
+.linkpage{
+  margin: 0 32.5%;
+  color: #0092b3;
+}
+
+a{
+  color: #47585c;
+}
+
+#pagetop{
+  position: fixed;
+  width: 1.5em;
+  text-align: center;
+  right: 15%;
+  bottom: 8%;
+  background-color: darkslategrey;
+  color: white;
+  border-radius: 100px;
+  text-decoration: none;
+  padding: 1% 1.5%;
+}
+
+.write-area{
+  display: flex;
+  flex-direction: column;
+  margin: 5% 15%;
+}
+#title,#body_text{
+  width: 90%;
+  padding: 10px 15px;
+  margin-left: 2%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #47585c;
 }
